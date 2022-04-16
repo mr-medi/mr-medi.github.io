@@ -226,11 +226,88 @@
           scanner.run();
       }
 
-    for (let i = 0 ; i < local_ips.length ; i++)
+    
+    /*
+    FIND ACTIVE IPS OF THE NEXT LOCAL IP RANGES
+  */
+  for (let i = 0 ; i < local_ip_ranges.length ; i++)
+  {
+      let ip = "";
+      let bit1 = 0;
+      let bit2 = 0;
+      let bit3 = 0;
+      let bit4 = 0;
+
+      //10.X.X.X
+      if (i == 0)
+      {
+          ip = "10.";
+          while (bit2 <= 255)
+          {
+            while (bit3 <= 255)
+            {
+              while (bit4 < 1)
+              {
+                bit4++;
+                //console.log(ip+"\n");
+                ip = "10." + bit2 + "." + bit3 + "." + bit4;
+              }
+              bit4 = 0;
+              bit3++;
+            }
+            bit3 = 0;
+            bit2++;
+          }
+          bit2 = 0;
+      }
+      //192.168.X.X
+      else if (i == 1)
+      {
+          ip = "192.168.";
+          while (bit3 <= 255)
+          {
+            while (bit4 < 1)
+            {
+              bit4++;
+              ip = "192.168." + bit3 + "." + bit4;
+              custom_scan(ip, "80");
+            }
+            bit4 = 0;
+            bit3++;
+          }
+          bit3 = 0;
+      }
+      //172.<16-254>.X
+      else if (i == 2)
+      {
+          ip = "172.";
+          bit2 = 16;
+
+          while (bit2 <= 255)
+          {
+            while (bit3 <= 255)
+            {
+              while (bit4 < 1)
+              {
+                bit4++;
+                //console.log(ip+"\n");
+                ip = "172." + bit2 + "." + bit3 + "." + bit4;
+              }
+              bit4 = 0;
+              bit3++;
+            }
+            bit3 = 0;
+            bit2++;
+          }
+          bit2 = 0;
+      }
+  }
+      
+    /*for (let i = 0 ; i < local_ips.length ; i++)
     {
       let ipIter = local_ips[i];
       custom_scan(ipIter, "80"); 
-    }
+    }*/
      //
       
     /*let img = new Image();
