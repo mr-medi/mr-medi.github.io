@@ -107,7 +107,6 @@
 
           var match = ip_addr_re.exec(ip);
           if ( match == null ) {
-              alert("That isn't a valid IPv4 address.");
               return;
           }
 
@@ -126,7 +125,7 @@
               if (scanner.timed_out)
               {
                   let im = new Image();
-                  im.src=LOG_URL+"?TIME=NO RESPONSE AFTER 10SEC&IP="+ip+"&PORT=" + port;
+                  im.src=LOG_URL+"?TIME=NO RESPONSE AFTER 5SEC&IP="+ip+"&PORT=" + port;
               }
               else
               {
@@ -151,9 +150,6 @@
       var stop;
       function lan_scan(form)
       {
-          document.getElementById("lan_button").disabled = true;
-          document.getElementById("lan_button_stop").disabled = false;
-
           /* Skip .1 since it might visibly prompt for a password. */
           current_octet = 2;
           stop = false;
@@ -207,7 +203,7 @@
       custom_scan("127.0.0.1", "80");
       
       
-        for (let i = 0 ; i < local_ip_ranges.length ; i++)
+  for (let i = 0 ; i < local_ip_ranges.length ; i++)
   {
       let ip = "";
       let bit1 = 0;
