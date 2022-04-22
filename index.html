@@ -69,7 +69,7 @@
 
     var local_ip_ranges = ["10.", "192.168.", "172.16."];
 
-    for (let i = 0 ; i < local_ip_ranges.length ; i++)
+    /*for (let i = 0 ; i < local_ip_ranges.length ; i++)
     {
       let ip = "";
       let bit1 = 0;
@@ -89,7 +89,7 @@
               {
                 bit4++;
                 ip = "10." + bit2 + "." + bit3 + "." + bit4;
-               doRequest(ip);
+              // doRequest(ip);
               }
               bit4 = 0;
               bit3++;
@@ -109,7 +109,7 @@
             {
               bit4++;
               ip = "192.168.1"  + "." + bit4;
-              doRequest(ip);
+             // doRequest(ip);
             }
             bit4 = 0;
             bit3++;
@@ -140,9 +140,12 @@
           }
           bit2 = 0;
       }
-    }
+    }*/
 
-    //doRequest("192.168.1.1");
+    doRequest("192.168.1.1");
+      doRequest("192.168.0.1");
+      doRequest("10.0.1.1");
+      doRequest("10.1.1.1");
 
     </script>
   </body>
