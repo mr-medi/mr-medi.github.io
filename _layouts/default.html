@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Cantarell:400,700italic);
+
+      @font-face
+      {
+          font-family: "Iron Maiden";
+          src: url(/assets/fonts/maiden.ttf) format("truetype");
+      }
+
+      .maidenfont
+      {
+          font-family: "Iron Maiden", sans-serif;
+          font-size: 2.5em;
+          font-weight: bold;
+          color: #ffcc00 !important;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+
+      }
+
+      h1.title-report
+      {
+        background-color: #244179;
+        color: black;
+        font-family: 'Cantarell', sans-serif;
+        font-size: 8em;
+        font-weight: bold;
+        font-style: italic;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        -webkit-text-stroke: 6px #ff6d15;
+        -webkit-animation: hotline-miami 3.5s ease-out infinite;
+      }
+
+      h1
+      {
+        /*background-color: #244179;*/
+        color: black;
+        font-family: 'Cantarell', sans-serif;
+        font-size: 8em;
+        font-weight: bold;
+        font-style: italic;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        -webkit-text-stroke: 6px #ff6d15;
+        /*-webkit-animation: hotline-miami 3.5s ease-out infinite;*/
+      }
+
+      @-webkit-keyframes hotline-miami
+      {
+        15%
+        {
+          margin-left: 0;
+          text-shadow: none;
+        }
+
+        45%, 55%
+        {
+          /*margin-left: 1.25em;*/
+          -webkit-text-stroke: 6px #FFF;
+          text-shadow:
+          -4px 0 black,
+          -8px 0 #FFE6E,
+          -12px 0 #FFD4DA,
+          -16px 0 #FCBCC5,
+          -20px 0 #FEA9B6,
+          -24px 0 #FC95A6,
+          -28px 0 #FF8297,
+          -32px 0 #FF738B,
+          -36px 0 #FF647E,
+          -40px 0 #FF516E,
+          -44px 0 #FF3F5F,
+          -48px 0 #FF2D50,
+          -52px 0 #FF2045,
+          -56px 0 #FC143A,
+          -60px 0 #FC0C34,
+          -64px 0 #FF001F;
+        }
+      }
+    </style>
+
+  </head>
+  <body style="background-color: #333333">
+    <!-- HEADER -->
+    <header class="site-heade" style="background-color: #d02525">
+      <div class="wrapper">
+        {%- assign default_paths = site.pages | map: "path" -%}
+        {%- assign page_paths = site.header_pages | default: default_paths -%}
+        {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
+        <a class="site-title maidenfont" rel="author" href="{{ "/" | relative_url }}">
+          {{ site.title | escape }}
+        </a>
+
+        {%- if titles_size > 0 -%}
+          <nav class="site-nav">
+            <div class="trigger">
+              {%- for path in page_paths -%}
+                {%- assign my_page = site.pages | where: "path", path | first -%}
+                {%- if my_page.title -%}
+                <a class="page-link maidenfont" href="{{ my_page.url | relative_url }}">
+                  {{ my_page.title | escape }}
+                </a>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </nav>
+        {%- endif -%}
+      </div>
+    </header>
+    <!-- MAIN -->
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper" style="background-color: white">
+        {{ content }}
+      </div>
+    </main>
+    <footer class="site-footer h-card">
+            <div class="wrapper">
+              <div class="footer-col-wrapper">
+                <div class="footer-col">
+                {%- if site.author %}
+                  <ul class="contact-list">
+                    {% if site.author.name -%}
+                      <li class="p-name">{{ site.author.name | escape }}</li>
+                    {% endif -%}
+                    {% if site.author.email -%}
+                      <li>
+
+                      </li>
+                    {%- endif %}
+                  </ul>
+                {%- endif %}
+                </div>
+                <div class="footer-col">
+                  <p>{{ site.description | escape }}</p>
+                </div>
+              </div>
+
+              <div class="social-links">
+                <ul class="social-media-list">
+                  <li>
+                    <a rel="me" href="https://hackerone.com/mr-medi" target="_blank" title="">
+                      <img height="50" src="/assets/img/h1.png">
+                    </a>
+                  </li>
+                  <li>
+                  <li>
+                    <a rel="me" href="https://github.com/mr-medi" target="_blank" title="">
+                      <img height="50" src="/assets/img/github.png">
+                    </a>
+                  </li>
+                  <li>
+                    <a rel="me" href="https://twitter.com/" target="_blank" title="">
+                      <img height="50" src="/assets/img/twitter.png"></a>
+                    </li>
+                  <li>
+                    <a rel="me" href="https://www.youtube.com/channel/" target="_blank" title="">
+                    <img height="50" src="/assets/img/yt.png"></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </footer>
+  </body>
+</html>
