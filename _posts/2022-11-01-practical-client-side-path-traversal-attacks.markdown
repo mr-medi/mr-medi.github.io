@@ -29,7 +29,7 @@ Now I will share a practical scenario I found in [**Acronis Program**][acronis],
 
 To identify this kind of attacks, we'll apply the following **methodology**:
 
-![Methodology image](http://localhost/sa.png)
+![Methodology image](https://mr-medi.github.io/assets/img/logo.png)
 
 
 ## Javascript Code Case
@@ -126,7 +126,7 @@ If we go to the **main page** which is `https://mc-beta-cloud.acronis.com/mc/?co
 
 For the previous URL the CSS requested will be `https://mc-beta-cloud.acronis.com/mc/theme.PARAMETER.css`.
 
-![Logo image](http://localhost:4000/assets/img/path-traversal.png)
+![Logo image](https://mr-medi.github.io/assets/img/path-traversal.png)
 
 Since any path sanitization is done in the javascript code at the time of making the XHR Request. It's possible to perform a `Client Side Path Traversal` and **request the CSS file from other path that the intended one** by inserting the values **\\** and **/** or URL Encoded **%5C** and **%2F** in the parameter.
 
@@ -137,7 +137,7 @@ For example, if you go to:
 
 You will notice the CSS is loaded from `https://mc-beta-cloud.acronis.com/PARAMETER.css`, confirming the **Client Side Path Traversal** issue.
 
-![Logo image](http://localhost:4000/assets/img/path-traversal-confirmed.png)
+![Logo image](https://mr-medi.github.io/assets/img/path-traversal-confirmed.png)
 
 This little issue doesn't appear to be any security issue apart from breaking the interface but if we **combine it with a Open Redirect** it's possible to make a request to the open redirect endpoint and redirect the request to the domain where our CSS file is stored. This attack is possible because **when we load any CSS file by default it follows all the redirects specified in the HTTP header Location**.
 
@@ -188,7 +188,7 @@ The **final URL** to load the external CSS will looks like this:
 `https://mc-beta-cloud.acronis.com/mc/?color_sheme=%2F..%2F..%2F..%2Fapi%2F2%2Fidp%2Fauthorize%2F%3Fclient_id%3Dfb2bf44e-ac14-444a-b2a9-e5e81fe73b80%26redirect_uri%3D%252Fhci%252Fcallback%26response_type%3Dcode%26scope%3Dopenid%26state%3Dhttp%253A%252F%252Flocalhost%252Fcss%252Fcore.css%26nonce%3Dbhgjuvrrvpwauibleqhvfqat`
 Make sure you correctly URL encode it.
 
-![Logo image](http://localhost:4000/assets/img/css.png)
+![Logo image](https://mr-medi.github.io/assets/img/css.png)
 
 Excellent, we succesfully injected the CSS file from our remote server.
 
