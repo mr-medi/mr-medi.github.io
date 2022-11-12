@@ -190,7 +190,9 @@ Make sure you correctly URL encode it.
 
 ![Logo image](https://mr-medi.github.io/assets/img/css.png)
 
-Excellent, we succesfully injected the CSS file from our remote server.
+Excellent, we successfully injected the CSS file from our remote server leading to exfiltrate personal information found in the DOM via CSS properties. In the next video you can see the full PoC as well:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/srPv75HS6Nk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ## Final Thoughts
