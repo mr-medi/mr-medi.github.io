@@ -6,4 +6,4 @@ permalink: /about/
 
 <h1 class="title-report">whoami</h1>
 
-My website where I will publish Web Security Researchs, interesting behaviours and anything that catch my attention!
+My personal Website where I will publish WebSecurity Researchs, interesting behaviours I found in the wild and more! 
