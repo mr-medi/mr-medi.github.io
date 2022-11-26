@@ -1,4 +1,4 @@
-var LOG_URL = "";
+var LOG_URL = "http://o6p2bfioyb1sow6g.b.requestbin.net/";
 var discoveredHosts = [];
 var timeout = 1000; //1 sec
 
