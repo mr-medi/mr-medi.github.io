@@ -7,7 +7,7 @@ permalink: /about/
 <h1 class="title-report">whoami</h1>
 
 <p class="lead">
-As a web developer, my passion lies in crafting dynamic and user-friendly websites. With extensive experience in PHP and expertise in the Laravel framework, I bring your ideas to life by building visually appealing, responsive, and feature-rich websites. From simple portfolio sites to complex web applications, I have the skills to deliver exceptional results.
+As a web developer, my passion lies in crafting dynamic and user-friendly web applications. With extensive experience in PHP and expertise in the Laravel framework, I bring your ideas to life by building visually appealing, responsive, and feature-rich websites. From simple portfolio sites to complex web applications, I have the skills to deliver exceptional results.
 </p>
 <p class="lead">
 In addition to my proficiency in PHP and Laravel, I also have a solid understanding of JavaScript. While I am well-versed in JavaScript and can utilize it to enhance website functionality, my true specialization lies in PHP and the Laravel ecosystem.
