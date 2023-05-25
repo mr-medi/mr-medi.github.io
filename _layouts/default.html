@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   <head>
-    <title>Medi Website</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4389648840605339" crossorigin="anonymous"></script>    
-    <!-- Google tag (gtag.js) -->
+    <title>Medi's Website</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4389648840605339" crossorigin="anonymous"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V2FXSRCVD3"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -11,10 +10,16 @@
       gtag('js', new Date());
       gtag('config', 'G-V2FXSRCVD3');
     </script>
-    <!--META TAGS-->
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/examples/album/album.css">
+    <script src="	https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/holder.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
     <style>
       @import url(https://fonts.googleapis.com/css?family=Cantarell:400,700italic);
@@ -28,12 +33,11 @@
       .maidenfont
       {
           font-family: "Iron Maiden", sans-serif;
-          font-size: 2em;
+          font-size: 2em!important;
           font-weight: bold;
           color: #ffcc00 !important;
           text-transform: uppercase;
           letter-spacing: 1px;
-
       }
 
       h1.title-report
@@ -52,16 +56,19 @@
 
       h1
       {
-        /*background-color: #244179;*/
         color: black;
         font-family: 'Cantarell', sans-serif;
-        font-size: 8em;
         font-weight: bold;
         font-style: italic;
         text-transform: uppercase;
         letter-spacing: 2px;
-        -webkit-text-stroke: 6px #ff6d15;
+        -webkit-text-stroke: 3px #ff6d15;
         /*-webkit-animation: hotline-miami 3.5s ease-out infinite;*/
+      }
+      h2.author
+      {
+
+        color: #ffcc00 !important;
       }
 
       @-webkit-keyframes hotline-miami
@@ -74,7 +81,6 @@
 
         45%, 55%
         {
-          /*margin-left: 1.25em;*/
           -webkit-text-stroke: 6px #FFF;
           text-shadow:
           -4px 0 black,
@@ -95,84 +101,222 @@
           -64px 0 #FF001F;
         }
       }
+
+      /* If the screen size is 1200px wide or more, set the font-size to 80px */
+      @media (min-width: 900px) {
+        .title-report {
+          font-size: 8000px!important;
+        }
+      }
+      /* If the screen size is smaller than 1200px, set the font-size to 80px */
+      @media (max-width: 1199.98px)
+      {
+        .title-report {
+          font-size: 60px!important;
+        }
+
+      }
+
+      @media (min-width: 100px)
+      {
+        .title-report {
+          font-size: 20px!important;
+        }
+
+
+      }
+
+      @media (min-width: 200px)
+      {
+        .title-report {
+          font-size: 35px!important;
+        }
+
+
+      }
+
+      @media (min-width: 300px)
+      {
+        .title-report {
+          font-size: 60px!important;
+        }
+      }
+
+      @media (min-width: 400px)
+      {
+        .title-report {
+          font-size: 85px!important;
+        }
+
+      }
+
+      @media (min-width: 500px)
+      {
+        .title-report {
+          font-size: 100px!important;
+        }
+      }
+
+      img
+      {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
+
+      code
+      {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
     </style>
-
   </head>
-  <body style="background-color: #333333">
+  <body style="background-color: #333333;!important">
     <!-- HEADER -->
-    <header class="site-heade" style="background-color: #d02525">
-      <div class="wrapper">
-        {%- assign default_paths = site.pages | map: "path" -%}
-        {%- assign page_paths = site.header_pages | default: default_paths -%}
-        {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
-        <a class="site-title maidenfont" rel="author" href="{{ "/" | relative_url }}">
-          {{ site.title | escape }}
-        </a>
-
-        {%- if titles_size > 0 -%}
-          <nav class="site-nav">
-            <div class="trigger">
-              {%- for path in page_paths -%}
-                {%- assign my_page = site.pages | where: "path", path | first -%}
-                {%- if my_page.title -%}
-                <a class="page-link maidenfont" href="{{ my_page.url | relative_url }}">
-                  {{ my_page.title | escape }}
-                </a>
-                {%- endif -%}
-              {%- endfor -%}
-            </div>
-          </nav>
-        {%- endif -%}
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="site-title maidenfont navbar-brand" href="/">{{ site.title | escape }}</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-togglee="dropdown" href="/researchs/">Web Security <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                  <li>
+                      {% assign pages = site.pages | where_exp: "item", "item.title" %}
+                      {% assign posts = site.posts %}
+                      {% assign pagesAndPosts = posts %}
+                      {% for pageAndPost in pagesAndPosts %}
+                          <a class="page-link" href="{{pageAndPost.url}}">{{pageAndPost.title}}</a>
+                      {% endfor %}
+                  </li>
+              </ul>
+            </li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </div>
       </div>
-    </header>
+    </nav>
+
     <!-- MAIN -->
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper" style="background-color: white">
-        {{ content }}
-      </div>
-    </main>
-    <footer class="site-footer h-card">
-            <div class="wrapper">
-              <div class="footer-col-wrapper">
-                <div class="footer-col">
-                {%- if site.author %}
-                  <ul class="contact-list">
-                    {% if site.author.name -%}
-                      <li class="p-name">{{ site.author.name | escape }}</li>
-                    {% endif -%}
-                    {% if site.author.email -%}
-                      <li>
+    <main role="main">
+      {% if page.url contains "/research/" %}
+      {% elsif page.url contains "/about/" %}
+      {% else %}
+      <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">{{page.title}}!</h1>
+            <p class="lead text-muted">
+              {{page.description}}
+            </p>
+          </div>
+        </section>
+        {% endif %}
 
-                      </li>
-                    {%- endif %}
-                  </ul>
-                {%- endif %}
-                </div>
-                <div class="footer-col">
-                  <p>{{ site.description | escape }}</p>
+    {% if page.url == "/" %}
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card mb-4 box-shadow"  style="color: #a0a9b0;background-color:#2b3035">
+                  <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Web Security Researchs" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_18851db171c%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_18851db171c%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.68333435058594%22%20y%3D%22120.3%22%3EWeb Security%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+                  <div class="card-body">
+                    <p class="card-text">
+                      Here, I will publish my web security researchs with case studies in bug bounty programs.
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <a href="/researchs" class="btn btn-primary my-2">View</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <div class="social-links">
-                <ul class="social-media-list">
-                  <li>
-                    <a rel="me" href="https://hackerone.com/mr-medi" target="_blank" title="">
-                      <img height="50" src="/assets/img/h1.png">
-                    </a>
-                  </li>
-                  <li>
-                  <li>
-                    <a rel="me" href="https://github.com/mr-medi" target="_blank" title="">
-                      <img height="50" src="/assets/img/github.png">
-                    </a>
-                  </li>
-                  <li>
-                    <a rel="me" href="https://twitter.com/medi_0ne" target="_blank" title="">
-                      <img height="50" src="/assets/img/twitter.png"></a>
-                    </li>
-                </ul>
+              <div class="col-md-4">
+                <div class="card mb-4 box-shadow"  style="color: #a0a9b0;background-color:#2b3035">
+                  <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text= Projects" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_18851db171d%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_18851db171d%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.68333435058594%22%20y%3D%22120.3%22%3EProjects%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+                  <div class="card-body">
+                    <p class="card-text">
+                      Coming soon...
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <a href="/projects" class="btn btn-danger my-2">View</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </footer>
+          </div>
+          {% else %}
+            {% if page.url == "/researchs/" %}
+                <div class="container">
+                  {% for pageAndPost in pagesAndPosts %}
+                    <div class="row" >
+                      <div class="col-md-4"  style="color: #a0a9b0;background-color:#2b3035">
+                        <h2 class="maidenfon">{{pageAndPost.title}}</h2>
+                        <a class="page-link" href="{{pageAndPost.url}}">
+                          {{pageAndPost.description}}
+                        </a>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+            {% endif %}
+
+            {% if page.url contains "/research/" %}
+                <div class="container mt-5" >
+                  <div class="row" style="margin: 2%">
+                    <div class="wrapper" style="padding:5%!important;background-color: white">
+                      {{ content }}
+                    </div>
+                  </div>
+                </div>
+            {% endif %}
+
+            {% if page.url == "/about/" or page.url == "/about.html" %}
+                <div class="container mt-5">
+                  <div class="wrapper" style="padding:5%!important;background-color: white">
+                    {{ content }}
+                  </div>
+                </div>
+            {% endif %}
+
+            {% if page.url == "/projects/" or page.url == "/projects.html" %}
+
+            {% endif %}
+          {% endif %}
+    </main>
+
+    <!--FOOTER-->
+    <div class="container my-5">
+      <footer class="text-center text-lg-start" stylee="background-color: #db6930;">
+        <div class="container d-flex justify-content-center py-5">
+          <button type="button" class="btn btn-warning btn-lg btn-floating mx-2" style="background-color: #d9ae05;">
+            <a rel="me" href="https://hackerone.com/mr-medi" target="_blank" title="">
+              <img style="max-height: 50px!important" height="50" src="/assets/img/h1.png">
+            </a>
+          </button>
+          <button type="button" class="btn btn-warning btn-lg btn-floating mx-2" style="background-color: #d9ae05;">
+            <a rel="me" href="https://twitter.com/medi_0ne" target="_blank" title="">
+              <img style="max-height: 50px!important" height="50" src="/assets/img/twitter.png"></a>
+          </button>
+        </div>
+
+        <div class="text-center text-white p-3" style="color: #a0a9b0">
+          ©{{ 'now' | date: "%Y" }} Medi
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
