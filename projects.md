@@ -2,5 +2,5 @@
 layout: page
 title: Projects
 permalink: /projects/
-description: Coming soon...
+description: Here, you can explore and discover innovative solutions that I have developed to streamline and optimize your daily tasks foccussed for web security researches.
 ---
