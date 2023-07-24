@@ -269,14 +269,16 @@
             {% if page.url == "/researchs/" %}
                 <div class="container">
                   {% for pageAndPost in pagesAndPosts %}
-                    <div class="row" >
-                      <div class="col-md-4"  style="color: #a0a9b0;background-color:#2b3035">
-                        <h2 class="maidenfon">{{pageAndPost.title}}</h2>
-                        <a class="page-link" href="{{pageAndPost.url}}">
-                          {{pageAndPost.description}}
-                        </a>
+                     {% if pageAndPost.title contains "client" %}
+                      <div class="row" >
+                        <div class="col-md-4"  style="color: #a0a9b0;background-color:#2b3035">
+                          <h2 class="maidenfon">{{pageAndPost.title}}</h2>
+                          <a class="page-link" href="{{pageAndPost.url}}">
+                            {{pageAndPost.description}}
+                          </a>
+                        </div>
                       </div>
-                    </div>
+                    {% endif %}
                   {% endfor %}
                 </div>
             {% endif %}
