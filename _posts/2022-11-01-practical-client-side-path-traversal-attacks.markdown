@@ -21,7 +21,8 @@ description: Exploring how modern web-applications can be exploited by placing u
 
 <h1 class="title-report responsive-font">../../../:)</h1>
 
-## Introduction
+
+<h2 class="introfont" style="font-size: 2em!important;">Introduction</h2>
 
 `Client Side Path Traversal` attacks arises when a web application loads some content using **XmlHTTPRequests** (XHR for short) and the user have control over some section of the path where to load the resource. This may lead to archieve many kind of Client Side issues such as  **XSS**, **CSSi**, etc if not correctly sanitized.
 
@@ -37,14 +38,13 @@ An alternative approach is to combine both methods. You can check for **paramete
 
 Now I will share a practical scenario I found in [**Acronis Program**][acronis], a `CSS Injection via Client Side Path Traversal + Open Redirect` leading to exfiltrate personal information of the user. Thanks to Acronis program for letting me disclose this report, it's indeed my favourite bug ever found.
 
-## Methodology
+<h2 class="introfont" style="font-size: 2em!important;">Methodology</h2>
 
 To identify this kind of attacks, we'll apply the following **methodology**:
 
 ![Methodology image](https://mr-medi.github.io/assets/img/logo.png)
 
-
-## Javascript Code Case
+<h2 class="introfont" style="font-size: 2em!important;">Javascript Code Case</h2>
 
 In this section I will explain **how I found the bug**. Once we login in our Acronis account, if we dig into the main javascript code can see something like that, I added some comments to the code to make it more simple (I just copied the vulnerable code, not all of them)
 
@@ -126,8 +126,7 @@ loadProfileAndBranding();
 
 {% endhighlight %}
 
-
-## Description
+<h2 class="introfont" style="font-size: 2em!important;">Description</h2>
 
 Nice, in this point once understood the javascript let's look how to **exploit** it.
 
@@ -178,7 +177,7 @@ Notice the **state** GET parameter is controllable by the user so we can specify
 </div>
 
 
-## Exploit
+<h2 class="introfont" style="font-size: 2em!important;">Exploit</h2>
 
 Once we confirmed the `Client Side Path Traversal and Open Redirect` let's put it all together to make a working `exploit`.
 
@@ -230,7 +229,7 @@ Excellent, we successfully injected the CSS file from our remote server leading 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/srPv75HS6Nk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-## Final Thoughts
+<h2 class="introfont" style="font-size: 2em!important;">Final Thoughts</h2>
 
 I have not found any disclosed bug about this kind of issue, so I found quite interesting to disclose it.
 It's not a new technique but definitely it's worthy to explore and very cool to chain!
@@ -245,13 +244,13 @@ I'm sure this technique can be chained with **Relative Path Overwrite Attacks** 
 
 Feel free to let me know if you have any suggestion or questions about this and I will be glad to hear it.
 
-## Securing applications
+<h2 class="introfont" style="font-size: 2em!important;">Securing applications</h2>
 
 The best approach to secure this funcionality in this specific scenario it's to make a **whitelist** of allowed CSS filenames to load  (As Acronis Team did) and **cast** the user supplied input to the **expected data**. In this case, the color_scheme parameter is expected to be a string, so we must just allow **[a-zA-Z0-9]** characters and avoid any URL character or special signs.
 
 Since this is a very specific scenario, the fix may depend from each website.
 
-## References
+<h2 class="introfont" style="font-size: 2em!important;">References</h2>
 
 This post is not intended to explain what CSS Injection stands for or how to use it
 to exfiltrate information. In the next links you have some useful info and some great H1 CSS Injection reports.
