@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Researchs
-description: 
+description: Web Security Insights & Case Studies
 permalink: /researchs/
 ---
 
