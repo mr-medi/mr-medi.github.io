@@ -10,22 +10,10 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/">Home</a></li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-togglee="dropdown" href="/researchs/">Web Security <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li>
-                    {% assign pages = site.pages | where_exp: "item", "item.title" %}
-                    {% assign posts = site.posts %}
-                    {% assign pagesAndPosts = posts %}
-                    {% for pageAndPost in pagesAndPosts %}
-                        <a class="page-link" href="{{pageAndPost.url}}">{{pageAndPost.title}}</a>
-                    {% endfor %}
-                </li>
-            </ul>
-          </li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/about">Services & About Me</a></li>
+          <li {% if page.url == "/" %}class="active"{% endif %}><a href="/">Home</a></li>
+          <li {% if page.url == "/researchs/" %}class="active"{% endif %}><a href="/researchs">Web Security</a></li>
+          <li {% if page.url == "/projects/" %}class="active"{% endif %}><a href="/projects">Projects</a></li>
+          <li {% if page.url == "/about/" %}class="active"{% endif %}><a href="/about">Services & About Me</a></li>
         </ul>
       </div>
     </div>
