@@ -205,17 +205,10 @@
       {% if page.url contains "/research/" %}
       {% elsif page.url contains "/about/" %}
       {% else %}
-      <section class="jumbotron text-center">
-        <div class="container">
-            <h1 class="jumbotron-heading">{{page.title}}!</h1>
-            <p class="lead text-muted">
-              {{page.description}}
-            </p>
-          </div>
-        </section>
-        {% endif %}
+        {% include section.html %}
+      {% endif %}
 
-    {% if page.url == "/" %}
+       {% if page.url == "/" %}
           <div class="container">
             <div class="row">
               <div class="col-md-4">
