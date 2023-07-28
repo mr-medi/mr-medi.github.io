@@ -159,7 +159,8 @@ While looking at the HTTP requests to see if I could find any **Open Redirect** 
 &redirect_uri=%2Fhci%2Fcallback
 &response_type=code
 &scope=openid
-&state=http://localhost&nonce=bhgjuvrrvpwauibleqhvfqat`
+&state=http://localhost
+&nonce=bhgjuvrrvpwauibleqhvfqat`
 
 Notice the **state** GET parameter is controllable by the user so we can specify any external domain where to redirect the user and it's valid for any account. The HTTP flow will looks like this:
 
