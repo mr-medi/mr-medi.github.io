@@ -155,7 +155,11 @@ This little issue doesn't appear to be any security issue apart from breaking th
 
 While looking at the HTTP requests to see if I could find any **Open Redirect**  and demonstrate the impact I notice one interesting API endpoint:
 
-`https://mc-beta-cloud.acronis.com/api/2/idp/authorize/?client_id={CLIENT-ID}&redirect_uri=%2Fhci%2Fcallback&response_type=code&scope=openid&state=http://localhost&nonce=bhgjuvrrvpwauibleqhvfqat`
+`https://mc-beta-cloud.acronis.com/api/2/idp/authorize/?client_id={CLIENT_ID}
+&redirect_uri=%2Fhci%2Fcallback
+&response_type=code
+&scope=openid
+&state=http://localhost&nonce=bhgjuvrrvpwauibleqhvfqat`
 
 Notice the **state** GET parameter is controllable by the user so we can specify any external domain where to redirect the user and it's valid for any account. The HTTP flow will looks like this:
 
