@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+title_tag: Services & About Me - Medi
 permalink: /about/
 ---
 
