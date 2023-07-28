@@ -1,10 +1,99 @@
-<div style="color: white; background-image: url('/assets/img/sectionl.jpeg'); background-repeat: no-repeat; background-position: center center; background-size: cover;" class="section py-md-5 py-lg-5">
+<style>
+    .article-box {
+      background-color: #2b3035;
+      color: #a0a9b0;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      height: 100%;
+    }
+    
+    .article-link:hover {
+      text-decoration: none;
+      color: white!important;
+      font-weight: bold;
+    
+    }
+    .article-box:hover {
+      text-decoration: none;
+      color: white!important;
+      /*color: #ff6d15!important;*/
+      font-weight: bold;
+      border: 1px solid #ff6d15;
+        box-shadow: 0 0 10px rgba(255, 109, 21, 0.5); /* Add a box shadow on hover */
+        z-index: 2;
+        transform: scale(1.05);
+        background-image: url('/assets/img/section2.jpeg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    
+    }
+    
+    .article-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .article-link {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .article-link:hover {
+      color: #87CEEB;
+    }
+    
+    .article-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 100px;
+    }
+    
+    @media screen and (min-width: 768px) {
+      .article-box {
+        min-height: 300px;
+      }
+    }
+    
+    @media screen and (max-width: 767px) {
+      .article-title {
+        font-size: 2.5em!important;
+      }
+      .article-description {
+        font-size: 1.2em;
+      }
+    }
+      @media screen and (min-width: 768px) {
+      .article-title {
+        font-size: 2.8em!important;
+      }
+      .article-description {
+        font-size: 1.3em;
+      }
+    }
+      </style>
     <div class="container">
-      <div class="row">
-        <div class="col-md-5 text">
-          <h1 class="font1" style="font-size: 4em;">{{page.title}}</h1>
-          <p class="lead">{{page.description}}</p>
-        </div>
+      <div class="row" style="margin: 100px 0">
+        <a class="article-link page-link" href="/researchs/">
+          <div class="article-box col-md-4"  style="color: #a0a9b0;background-color:#2b3035">
+              <h2 class="article-title introfont" style="color:#ff6d15 ">Web Security Researchs</h2>
+              <p class="article-description">Here, I will publish my web security researchs with case studies in bug bounty programs.</p>
+          </div>
+        </a>
+        <a class="article-link page-link" href="/projects/">
+          <div class="article-box col-md-4"  style="color: #a0a9b0;background-color:#2b3035">
+            <h2 class="article-title introfont" style="color:#ff6d15 ">Projects</h2>
+            <p class="article-description">Coming soon...</p>
+          </div>
+        </a>
       </div>
     </div>
-  </div>
+    
