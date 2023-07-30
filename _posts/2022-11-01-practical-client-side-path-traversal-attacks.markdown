@@ -2,7 +2,7 @@
 layout: post
 title:  "Practical Client Side Path Traversal Attacks"
 title_tag: Practical Client Side Path Traversal Attacks - Medi
-image: https://mr-medi.github.io/assets/img/csfc.png
+image: https://mr-medi.github.io/assets/img/cspt.png
 date:   2022-11-04 15:36:24 +0200
 categories: Research
 description: Exploring how modern web-applications can be exploited by placing user input into the path of client-side requests and showing a clear pathway to exploit it. Addionally, I explain a case study in Acronis program.
