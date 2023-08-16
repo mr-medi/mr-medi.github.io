@@ -1,6 +1,8 @@
 ---
 layout: post
 title:  "How Cross-Site Frame Counting Exposes Private Repositories on GitHub"
+title_tag: How Cross-Site Frame Counting Exposes Private Repositories on GitHub - Medi
+image: https://mr-medi.github.io/assets/img/csfc.png
 categories: Research
 date:   2023-07-31 09:36:24 +0200
 description: "Unveiling the Hidden Risks: How Cross-Site Frame Counting Exposes Private Repositories on GitHub"
