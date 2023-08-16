@@ -80,14 +80,12 @@
     <div class="container">
       <div class="row" style="margin: 100px 0">
         {% for pageAndPost in pagesAndPosts %}
-            {%if pageAndPost.title contains "Client" %}
             <div class="article-box col-md-4"  style="color: #a0a9b0;background-color:#2b3035">
               <a class="article-link page-link" href="{{pageAndPost.url}}">
                 <h2 class="article-title introfont" style="color:#ff6d15 ">{{pageAndPost.title}}</h2>
                 <p class="article-description">{{pageAndPost.description}}</p>
               </a>
             </div>
-            {%endif%}
         {% endfor %}
       </div>
     </div>
