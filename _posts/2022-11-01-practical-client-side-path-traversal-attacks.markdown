@@ -276,3 +276,6 @@ to exfiltrate information. In the next links you have some useful info and some 
 [r2]:https://www.google.com/search?q=site%3Ahackerone.com+css+injection
 [r3]:https://www.google.com/search?q=css+injection+exfiltration
 [james_kettle]:https://twitter.com/albinowax
+
+
+{% include see-more.html %}
