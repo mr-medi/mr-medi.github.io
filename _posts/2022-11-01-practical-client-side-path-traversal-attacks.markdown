@@ -278,4 +278,3 @@ to exfiltrate information. In the next links you have some useful info and some 
 [james_kettle]:https://twitter.com/albinowax
 
 
-{% include see-more.html %}

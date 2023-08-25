@@ -207,4 +207,3 @@ To mitigate the risk of data exposure through Cross-Site Frame Counting, it is c
 [github]:https://hackerone.com/github
 
 
-{% include see-more.html %}
