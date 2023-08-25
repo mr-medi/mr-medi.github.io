@@ -1,0 +1,99 @@
+<style>
+    .article-box {
+      background-color: #2b3035;
+      color: #a0a9b0;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      height: 100%;
+    }
+    
+    .article-link:hover {
+      text-decoration: none;
+      color: white!important;
+      font-weight: bold;
+    
+    }
+    .article-box:hover {
+      text-decoration: none;
+      color: white!important;
+      /*color: #ff6d15!important;*/
+      font-weight: bold;
+      border: 1px solid #ff6d15;
+        box-shadow: 0 0 10px rgba(255, 109, 21, 0.5); /* Add a box shadow on hover */
+        z-index: 2;
+        transform: scale(1.05);
+    
+    }
+    
+    .article-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .article-link {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .article-link:hover {
+      color: #87CEEB;
+    }
+    
+    .article-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 100px;
+    }
+    
+    @media screen and (min-width: 768px) {
+      .article-box {
+        min-height: 300px;
+      }
+    }
+    @media screen and (max-width: 767px) {
+      .article-title {
+        font-size: 2.5em!important;
+      }
+      .article-description {
+        font-size: 1.2em;
+      }
+    }
+      @media screen and (min-width: 768px) {
+      .article-title {
+        font-size: 2.8em!important;
+      }
+      .article-description {
+        font-size: 1.3em;
+      }
+    }
+      </style>
+    
+    <div class="container">        
+      <h1>See more from me:</h1>
+      <div class="row" style="margin: 100px 0">
+        <div class="article-box col-md-4"  style="color: #a0a9b0;background-color:#2b3035">
+            <a target="_blank" class="article-link page-link" href="https://www.youtube.com/watch?v=eFZsJq5eJus">
+              <h2 class="article-title introfont" style="color:#ff6d15 ">Integreitor</h2>
+              <p class="article-description">Discover how Integreitor empowers you to seamlessly connect different bug bounty platforms. Stay tuned for the launch!</p>
+            </a>
+          </div>
+        {% for pageAndPost in pagesAndPosts %}
+            <div class="article-box col-md-4"  style="color: #a0a9b0;background-color:#2b3035">
+              <a class="article-link page-link" href="{{pageAndPost.url}}">
+                <h2 class="article-title introfont" style="color:#ff6d15 ">{{pageAndPost.title}}</h2>
+                <p class="article-description">{{pageAndPost.description}}</p>
+              </a>
+            </div>
+        {% endfor %}
+      </div>               
+    </div>
+    
+  
