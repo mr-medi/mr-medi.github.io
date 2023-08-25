@@ -31,7 +31,7 @@
     }
     
     .article-title {
-      font-size: 24px;
+      font-size: 18px;
       font-weight: bold;
       margin-bottom: 10px;
     }
@@ -76,17 +76,17 @@
     }
       </style>
     
-    <div class="container">        
-      <h1>See more from me:</h1>
+    <div class="container mt-5" style="margin-top: 10px; background-color: #ebf0f2;">        
+      <h1 class="top-center">See more from me:</h1>
       <div class="row" style="margin: 100px 0">
-        <div class="article-box col-md-4"  style="color: #a0a9b0;background-color:#2b3035">
+        <div class="article-box col-md-4 d-flex flex-column"  style="color: #a0a9b0;background-color:#2b3035">
             <a target="_blank" class="article-link page-link" href="https://www.youtube.com/watch?v=eFZsJq5eJus">
               <h2 class="article-title introfont" style="color:#ff6d15 ">Integreitor</h2>
               <p class="article-description">Discover how Integreitor empowers you to seamlessly connect different bug bounty platforms. Stay tuned for the launch!</p>
             </a>
           </div>
         {% for pageAndPost in pagesAndPosts %}
-            <div class="article-box col-md-4"  style="color: #a0a9b0;background-color:#2b3035">
+            <div class="article-box col-md-4 d-flex flex-column"  style="color: #a0a9b0;background-color:#2b3035">
               <a class="article-link page-link" href="{{pageAndPost.url}}">
                 <h2 class="article-title introfont" style="color:#ff6d15 ">{{pageAndPost.title}}</h2>
                 <p class="article-description">{{pageAndPost.description}}</p>
