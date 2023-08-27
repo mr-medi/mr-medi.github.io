@@ -230,6 +230,16 @@
                 </div>
                 {% include see-more.html %}
             {% endif %}
+            {% if page.url contains "/project/" %}
+                <div class="container mt-5" >
+                  <div class="row" style="margin: 2%">
+                    <div class="wrapper" style="padding:5%!important;background-color: white">
+                      {{ content }}
+                    </div>
+                  </div>
+                </div>
+                {% include see-more.html %}
+            {% endif %}
 
             {% if page.url == "/about/" or page.url == "/about.html" %}
                 <div class="container mt-5">
