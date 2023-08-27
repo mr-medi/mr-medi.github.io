@@ -209,6 +209,7 @@
     <main role="main" style="padding-top: 70px;">
       {% if page.url contains "/research/" %}
       {% elsif page.url contains "/about/" %}
+      {% elsif page.url contains "/project/" %}
       {% else %}
         {% include section.html %}
       {% endif %}
