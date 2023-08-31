@@ -12,7 +12,7 @@
         <ul class="nav navbar-nav">
           <li {% if page.url == "/" %}class="active"{% endif %}><a href="/">Home</a></li>
           <li {% if page.url == "/researchs/" %}class="active"{% endif %}>
-            <a class="dropdown-toggle" data-togglee="dropdown" href="/researchs/">Web Security <span class="caret"></span></a>
+            <a class="dropdown-toggle" data-togglee="dropdown" href="/researchs/">Web Security Blog<span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li>
                     {% assign pages = site.pages | where_exp: "item", "item.title" %}
