@@ -209,7 +209,7 @@
     <main role="main" style="padding-top: 70px;">
       {% if page.url contains "/research/" %}
       {% elsif page.url contains "/about/" %}
-      {% elsif page.url contains "/project/" %}
+      {% elsif page.url contains "/project/" %}      
       {% else %}
         {% include section.html %}
       {% endif %}
@@ -252,6 +252,9 @@
 
             {% if page.url == "/projects/" or page.url == "/projects.html" %}
              {% include projects-container.html %}
+            {% endif %}
+            {% if page.url == "/music/" or page.url == "/music.html" %}
+             {% include music-container.html %}
             {% endif %}
           {% endif %}
     </main>
