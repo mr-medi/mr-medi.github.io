@@ -5,7 +5,7 @@
 layout: home
 title: Welcome
 title_tag: Web Security Insights & Web Development - Medi
-description: Stay tuned for exciting upcoming projects and services that will revolutionize the cybersecurity landscape. I'm working on innovative solutions and advanced tools to enhance vulnerability assessment, threat intelligence, and incident response.
+description: I am a dedicated freelance developer and pentester/bug hunter. Enjoy the projects I have been working on and the ones to come!
 
 
 ---
