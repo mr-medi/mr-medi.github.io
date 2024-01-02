@@ -8,18 +8,17 @@ permalink: /about/
 <h1 class="title-report">whoami</h1>
 
 <p class="lead">
-As a web developer, my passion lies in crafting dynamic and user-friendly web applications. With extensive experience in PHP and expertise in the Laravel framework, I bring your ideas to life by building visually appealing, responsive, and feature-rich websites. From simple portfolio sites to complex web applications, I have the skills to deliver exceptional results.
+I'm a passionate web developer specializing in crafting dynamic, user-friendly web applications. With expertise in PHP and the Laravel framework, I bring your ideas to life by building visually appealing, responsive, and feature-rich websites.
 </p>
 <p class="lead">
-In addition to my proficiency in PHP and Laravel, I also have a solid understanding of JavaScript. While I am well-versed in JavaScript and can utilize it to enhance website functionality, my true specialization lies in PHP and the Laravel ecosystem.
+Besides my proficiency in PHP and Laravel, I possess a solid understanding of JavaScript. While I can utilize JavaScript to enhance website functionality, my primary focus remains on PHP and the Laravel ecosystem.
 </p>
 <p class="lead">
-In addition to my web development skills, I have a deep understanding of cybersecurity and possess the knowledge and tools to identify vulnerabilities in your digital assets. Through meticulous testing and analysis, I help fortify your systems, protect sensitive data, and ensure a robust security posture.
+In addition to web development, I have a deep understanding of cybersecurity in web apps and browser extension. I possess the knowledge to identify vulnerabilities in digital assets. You can find my profile on HackerOne at [hackerone.com/mr-medi](https://hackerone.com/mr-medi), where I contribute to fortifying systems, protecting sensitive data, and ensuring robust security posture.
 </p>
 <p class="lead">
-With my combined expertise in PHP, Laravel, and pentesting, I offer a holistic approach to creating secure and high-performing digital solutions. I am committed to surpassing client expectations by delivering projects on time and within budget.
+Combining my expertise in PHP, Laravel, and pentesting, I offer a holistic approach to creating secure and high-performing digital solutions. I'm dedicated to surpassing client expectations by delivering projects on time and within budget.
 </p>
 <p class="lead">
-I thrive on new challenges and enjoy working collaboratively with clients to transform ideas into reality. Let's discuss your project requirements and explore how I can help you achieve your goals. Get in touch with me today to unlock the full potential of your digital presence.
+I thrive on new challenges and enjoy collaborative work. Reach out to me if you're looking for assistance in web development projects or if you need a skilled freelancer for pentesting. 
 </p>
-

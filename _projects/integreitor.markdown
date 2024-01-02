@@ -10,8 +10,3 @@ description: Integreitor is a powerful platform that brings together ethical hac
 ## Project Details
 
 
-
-## Project Links
-
-- GitHub Repository: [Link to GitHub Repo](https://github.com/mr-medi/integreitor)
-
