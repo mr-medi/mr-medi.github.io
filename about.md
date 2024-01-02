@@ -14,7 +14,7 @@ I'm a passionate web developer specializing in crafting dynamic, user-friendly w
 Besides my proficiency in PHP and Laravel, I possess a solid understanding of JavaScript. While I can utilize JavaScript to enhance website functionality, my primary focus remains on PHP and the Laravel ecosystem.
 </p>
 <p class="lead">
-In addition to web development, I have a deep understanding of cybersecurity in web apps and browser extension. I possess the knowledge to identify vulnerabilities in digital assets. You can find my profile on HackerOne at [hackerone.com/mr-medi](https://hackerone.com/mr-medi), where I contribute to fortifying systems, protecting sensitive data, and ensuring robust security posture.
+In addition to web development, I have a deep understanding of cybersecurity in web apps and browser extension. I possess the knowledge to identify vulnerabilities in digital assets. You can find my profile on HackerOne at <a href="https://hackerone.com/mr-medi">hackerone.com/mr-medi</a>, where I contribute to fortifying systems, protecting sensitive data, and ensuring robust security posture.
 </p>
 <p class="lead">
 Combining my expertise in PHP, Laravel, and pentesting, I offer a holistic approach to creating secure and high-performing digital solutions. I'm dedicated to surpassing client expectations by delivering projects on time and within budget.
